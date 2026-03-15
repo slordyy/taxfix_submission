@@ -1,0 +1,15 @@
+services:
+  data_pipelines:
+    build: ./data_pipelines
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data_pipelines/airflow:/usr/src/app/airflow
+      - ./datalake:/usr/src/datalake
+
+  reports:
+    build: ./reports
+    ports:
+      - "2718:2718"
+    volumes:
+      - ./datalake:/usr/src/datalake

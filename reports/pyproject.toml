@@ -1,0 +1,30 @@
+[project]
+name = "reports"
+version = "0.1.0"
+dependencies = [
+    "duckdb>=1.5.0",
+    "marimo>=0.20.4",
+    "polars[pyarrow]>=1.39.0",
+]
+requires-python = ">=3.13"
+authors = [
+    {name = "Daniel Schruhl", email = "danielschruhl@gmail.com"},
+]
+description = "BI reports"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.0",
+    "pytest>=9.0.1",
+    "ruff>=0.14.7",
+]
+
+[project.scripts]
+reports = "reports.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
